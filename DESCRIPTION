@@ -1,7 +1,7 @@
 Package: MPA
 Type: Package
 Title: MicroPlaStiCanalyser - statistics and graphs
-Version: 0.0.0.9000
+Version: 1.0
 Authors@R: person("Uwe", "Schnepf", email = "uwe.schnepf@bio.uni-stuttgart.de",
   role = c("aut", "cre"))
 Description: The package could be used for calculating statistics and
