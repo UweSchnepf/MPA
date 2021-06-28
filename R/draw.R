@@ -214,7 +214,7 @@ draw_KroenerCarbo <- function(data,
   # We decide which values to keep
   data[["TheoreticalElongation"]] <- eq(data[[cisp]])
   data[["ThresholdCheck"]] <- with(data,
-                                   ifelse(data[[elon]] > data$TheoreticalElongation, "invalid", "valid"))
+                                   ifelse(data[[elon]] <= data$TheoreticalElongation, "valid", "invalid"))
   
   col_grouped <- col[as.numeric(as.factor(data$ThresholdCheck))]
   pch_grouped <- pch[as.numeric(as.factor(data$ThresholdCheck))]
