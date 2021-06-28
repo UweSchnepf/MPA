@@ -216,9 +216,9 @@ draw_KroenerCarbo <- function(data,
   data[["ThresholdCheck"]] <- with(data,
                                    ifelse(data[[elon]] <= data$TheoreticalElongation, "valid", "invalid"))
   
-  col_grouped <- col[as.numeric(as.factor(data$ThresholdCheck))]
-  pch_grouped <- pch[as.numeric(as.factor(data$ThresholdCheck))]
-  cex_grouped <- cex[as.numeric(as.factor(data$ThresholdCheck))]
+  col_grouped <- col[as.numeric(relevel(as.factor(data$ThresholdCheck), "valid"))]
+  pch_grouped <- pch[as.numeric(relevel(as.factor(data$ThresholdCheck), "valid"))]
+  cex_grouped <- cex[as.numeric(relevel(as.factor(data$ThresholdCheck), "valid"))]
 
   # We add the values to keep
   par(new = TRUE)
