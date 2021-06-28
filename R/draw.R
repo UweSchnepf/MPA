@@ -234,7 +234,7 @@ draw_KroenerCarbo <- function(data,
 
   if(legend == TRUE){
   legend("topright",
-         legend = c("invalid", "valid"),
+         legend = c("valid", "invalid"),
          col = col,
          pch = pch)
   }
