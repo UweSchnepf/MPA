@@ -10,8 +10,8 @@ draw_KroenerCarbo(
   elon = "Elongation",
   model,
   col = c("black", "black"),
-  col_line = "red",
-  pch = c(4, 20),
+  col_line = "#00BEFF",
+  pch = c(20, 4),
   cex = c(1, 1),
   legend = TRUE,
   ...
@@ -26,13 +26,13 @@ draw_KroenerCarbo(
 
 \item{model}{Must be either "ce" for the Circularity-Elongation model or "se" for the Sphericity-Elongation model.}
 
-\item{col}{Here you can enter character values colors as a vector of form c(invalid, valid).}
+\item{col}{Here you can enter character values colors as a vector of form c(valid, invalid).}
 
-\item{col_line}{Here you can change the color of the theoretical curve.}
+\item{col_line}{Here you can change the color of the theoretical curve. Default is lightblue.}
 
-\item{pch}{Here you can enter numerical values for point symbols as a vector of form c(invalid, valid).}
+\item{pch}{Here you can enter numerical values for point symbols as a vector of form c(valid, invalid).}
 
-\item{cex}{Here you can enter numerical values for point size as a vector of form c(invalid, valid).}
+\item{cex}{Here you can enter numerical values for point size as a vector of form c(valid, invalid).}
 
 \item{legend}{Logical. Should legend be drawn (TRUE) or not (FALSE)? Default is TRUE.}
 

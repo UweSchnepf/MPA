@@ -1,7 +1,7 @@
 Package: MPA
 Type: Package
-Title: MicroPlaStiCanalyser - statistics and graphs
-Version: 1.1.0
+Title: Microplastic particle analysis
+Version: 1.1.1
 Authors@R: person("Uwe", "Schnepf", email = "uwe.schnepf@bio.uni-stuttgart.de",
   role = c("aut", "cre"))
 Description: The package could be used for calculating statistics and
@@ -9,4 +9,4 @@ Description: The package could be used for calculating statistics and
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
