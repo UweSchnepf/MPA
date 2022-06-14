@@ -196,9 +196,9 @@ draw_KroenerCarbo <- function(data,
     stop("Elongation must be numeric")
 
   # We relate either circularity or sphericity to elongation
-  if(model == "ce")
+  if (model == "ce")
     eq <- function(x) 1-((2-sqrt(4-4*(x*100/95)^2))/(2*x*100/95))
-  else if(model == "se")
+  else if (model == "se")
     eq <- function(x) 1 - x^2
 
   # We plot the theoretical relationship
@@ -225,17 +225,18 @@ draw_KroenerCarbo <- function(data,
   plot(y = data[[elon]],
        x = data[[cisp]],
        xlim = c(0,1),
-       ylim = c(0,1),
+       ylim = c(0,1.2),
        xlab = cisp,
        ylab = elon,
        col = col_grouped,
        pch = pch_grouped,
        cex = cex_grouped, ...)
 
-  if(legend == TRUE){
+  if (legend == TRUE) {
   legend("topright",
          legend = c("valid", "invalid"),
          col = col,
-         pch = pch)
+         pch = pch, 
+         bty = "n")
   }
 } # END OF FUNCTION
