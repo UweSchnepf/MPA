@@ -161,7 +161,7 @@ draw_dist <- function(data,
 #' @param elon A character string to select the vector that contains elongation values. Default is "Elongation".
 #' @param model Must be either "ce" for the Circularity-Elongation model or "se" for the Sphericity-Elongation model.
 #' @param col Here you can enter character values colors as a vector of form c(valid, invalid).
-#' @param col_line Here you can change the color of the theoretical curve.
+#' @param col_line Here you can change the color of the theoretical curve. Default is lightblue.
 #' @param pch Here you can enter numerical values for point symbols as a vector of form c(valid, invalid).
 #' @param cex  Here you can enter numerical values for point size as a vector of form c(valid, invalid).
 #' @param legend Logical. Should legend be drawn (TRUE) or not (FALSE)? Default is TRUE.
@@ -178,7 +178,7 @@ draw_KroenerCarbo <- function(data,
                               elon = "Elongation",
                               model,
                               col = c("black", "black"),
-                              col_line = "red",
+                              col_line = "#00BEFF",
                               pch = c(20, 4),
                               cex = c(1, 1),
                               legend = TRUE, ...)
@@ -226,8 +226,8 @@ draw_KroenerCarbo <- function(data,
   par(new = TRUE)
   plot(y = data[[elon]],
        x = data[[cisp]],
-       xlim = c(0,1),
-       ylim = c(0,1.2),
+       xlim = c(0, 1),
+       ylim = c(0, 1),
        xlab = cisp,
        ylab = elon,
        col = col_grouped,
