@@ -9,14 +9,15 @@
 #' @param ylim The y limits for the plot.
 #' @param xlab Axis label for the x axis.
 #' @param ylab Axis label for the first y axis.
-#' @param ylab2 Axis label for the second y axis.
+#' @param y2lab Axis label for the second y axis.
 #' @param trans IMPORTANT: DOES NOT WORK AT THE MOMENT. Logical. TRUE: x-axis is drawn on a logarithmic scale. FALSE: x-axis is drawn on a linear scale. Default is FALSE.
 #' @param breaks Defines the bin size of the histogram.
 #' @param margins A numerical vector of the form c(bottom, left, top, right) which gives the number of lines of margin to be specified on the four sides of the plot. The default is c(4, 4, 1, 4). This is especalliy important for a correct representation of the second y-axis.
 #' @param tick_Xaxis A sequence of numbers that will be used to draw the ticks at the x-axis.
 #' @param tick_Yaxis A sequence of numbers that will be used to draw the ticks at the x-axis.
 #' @param cex A numerical value giving the amount by which plotting text and symbols should be magnified relative to the default of 1.
-#' @param col_normalized A single character string to pass the color in which normalized frequencies should be graphed. Default is "red".
+#' @param col_normalized A single character string to pass the color in which normalized frequencies should be graphed. Default is light blue.
+#' @param col_y2 A single character string to pass the color in which the second y axis should be graphed. Default is light blue.
 #' @param ... Other graphical parameters
 #'
 #' @author
@@ -33,12 +34,13 @@ draw_dist <- function(data,
                       ylim,
                       xlab = sors,
                       ylab = "Frequency",
-                      ylab2 = expression('Normalized frequency [µm'^-1*']'),
+                      y2lab = expression('Normalized frequency [µm'^-1*']'),
                       margins = c(4, 4, 1, 4),
                       trans = FALSE,
                       breaks,
                       cex = 1,
-                      col_normalized = "red", ...)
+                      col_normalized = "#00BEFF", 
+                      col_y2 = "#00BEFF", ...)
 {
   # We do some checks
   if (!inherits(data, "data.frame"))
@@ -117,12 +119,12 @@ draw_dist <- function(data,
               ylim = c(0, max(Yaxis_normal)))
 
   axis(side = 4,
-       col = col_normalized,
-       col.axis = col_normalized,
+       col = col_y2,
+       col.axis = col_y2,
        at = seq(0, max(Yaxis_normal),
                 by = Yaxis_normal[2]-Yaxis_normal[1]))
 
-  ## Plot normalised histogram
+  ## Plot normalized histogram
   par(new = TRUE)
   plot(x = greaterZero.mids,
        y = greaterZero.counts,
@@ -139,8 +141,8 @@ draw_dist <- function(data,
   )
 
   mtext(side = 4,
-        text = ylab2,
-        col = col_normalized,
+        text = y2lab,
+        col = col_y2,
         line = 3,
         cex = cex)
 } # END OF FUNCTION
