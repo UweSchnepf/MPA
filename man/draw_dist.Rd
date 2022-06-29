@@ -13,12 +13,13 @@ draw_dist(
   ylim,
   xlab = sors,
   ylab = "Frequency",
-  ylab2 = expression("Normalized frequency [µm"^-1 * "]"),
+  y2lab = expression("Normalized frequency [µm"^-1 * "]"),
   margins = c(4, 4, 1, 4),
   trans = FALSE,
   breaks,
   cex = 1,
-  col_normalized = "red",
+  col_normalized = "#00BEFF",
+  col_y2 = "#00BEFF",
   ...
 )
 }
@@ -39,7 +40,7 @@ draw_dist(
 
 \item{ylab}{Axis label for the first y axis.}
 
-\item{ylab2}{Axis label for the second y axis.}
+\item{y2lab}{Axis label for the second y axis.}
 
 \item{margins}{A numerical vector of the form c(bottom, left, top, right) which gives the number of lines of margin to be specified on the four sides of the plot. The default is c(4, 4, 1, 4). This is especalliy important for a correct representation of the second y-axis.}
 
@@ -49,7 +50,9 @@ draw_dist(
 
 \item{cex}{A numerical value giving the amount by which plotting text and symbols should be magnified relative to the default of 1.}
 
-\item{col_normalized}{A single character string to pass the color in which normalized frequencies should be graphed. Default is "red".}
+\item{col_normalized}{A single character string to pass the color in which normalized frequencies should be graphed. Default is light blue.}
+
+\item{col_y2}{A single character string to pass the color in which the second y axis should be graphed. Default is light blue.}
 
 \item{...}{Other graphical parameters}
 }
